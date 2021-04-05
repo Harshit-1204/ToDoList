@@ -41,6 +41,6 @@ app.post("/work",function(req,rse){
     workItems.push(item)
     res.redirect("/work")
 })
-app.listen(3000,function(){
+app.listen(process.env.port || 3000,function(){
     console.log("server has stared at port 3000")
 })
