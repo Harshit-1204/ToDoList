@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs")
@@ -15,7 +16,7 @@ app.set("view engine","ejs")
 
 
 
-mongoose.connect("mongodb+srv://admin-harshit:BOGHARAhar12@cluster0.le9wi.mongodb.net/todolistDB" , { useNewUrlParser : true ,useUnifiedTopology: true})
+mongoose.connect(process.env.MONGO_URL , { useNewUrlParser : true ,useUnifiedTopology: true})
 
 const itemsSchema = mongoose.Schema({
     name : String
